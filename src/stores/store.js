@@ -17,7 +17,6 @@ export const useProductStore = defineStore('product', () => {
 
   async function deleteProductAction() {
     await deleteProduct(productId.value).then((res) => {
-      // tuy vao response se call lai getall hoac replace state products nhe a
       console.log('res', res)
       handleDeleteModalVisible(false)
     })
@@ -25,7 +24,6 @@ export const useProductStore = defineStore('product', () => {
 
   async function updateProductAction(body) {
     await editProduct(productId.value, body).then((res) => {
-      // tuy vao response se call lai getall hoac replace state products nhe a
       console.log('res', res)
       handleUpdateModalVisible(false)
     })
@@ -33,7 +31,6 @@ export const useProductStore = defineStore('product', () => {
 
   async function addNewProductAction(body) {
     await addProduct(body).then((res) => {
-      // tuy vao response se call lai getall hoac replace state products nhe a
       console.log('res', res)
       handleUpdateModalVisible(false)
     })

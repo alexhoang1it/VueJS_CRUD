@@ -38,5 +38,5 @@ export const editProduct = (id, body) => {
 }
 
 export const deleteProduct = (id) => {
-  return instance.delete(`/product/${id}`)
+  return instance.delete(`/products/${id}`)
 }
