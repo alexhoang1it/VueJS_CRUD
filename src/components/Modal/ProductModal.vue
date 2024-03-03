@@ -67,6 +67,11 @@ const form_data = ref({
   price: 0,
   category: '',
   rating: 0,
+  description: "Des",
+  discount_percentage: 10,
+  stock:  20,
+  brand: "SamSung",
+  cart_id: 1
 })
 
 const isError = ref(false)
@@ -77,17 +82,22 @@ watch(() => store.productId, () => {
     form_data.value.title = product?.title
     form_data.value.thumbnail = product?.thumbnail
     form_data.value.images = product?.images
-    form_data.value.price = product?.price
+    form_data.value.price = parseFloat(product?.price)
     form_data.value.category = product?.category
-    form_data.value.rating = product?.rating
+    form_data.value.rating = parseFloat(product?.rating)
   } else {
     form_data.value = {
       title: '',
       thumbnail: '',
       images: [''],
       price: 0,
-      cagetory: '',
+      category: '',
       rating: 0,
+      description: "Des",
+      discount_percentage: 10,
+      stock:  20,
+      brand: "",
+      cart_id: 1
     }
   }
 })

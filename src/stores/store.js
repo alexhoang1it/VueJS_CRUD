@@ -19,6 +19,7 @@ export const useProductStore = defineStore('product', () => {
     await deleteProduct(productId.value).then((res) => {
       console.log('res', res)
       handleDeleteModalVisible(false)
+      getAllAction()
     })
   }
 
@@ -26,6 +27,7 @@ export const useProductStore = defineStore('product', () => {
     await editProduct(productId.value, body).then((res) => {
       console.log('res', res)
       handleUpdateModalVisible(false)
+      getAllAction()
     })
   }
 
@@ -33,6 +35,7 @@ export const useProductStore = defineStore('product', () => {
     await addProduct(body).then((res) => {
       console.log('res', res)
       handleUpdateModalVisible(false)
+      getAllAction()
     })
   }
 
